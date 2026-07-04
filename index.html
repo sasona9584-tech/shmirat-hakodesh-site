@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>שמירת הקודש - ליווי עולים להר הבית</title>
+<meta name="description" content="שמירת הקודש - קהילה המלווה יהודים בעלייה להר הבית מתוך ידיעה, הכנה וכבוד למקום ולהלכה.">
+</head>
+<body style="margin:0;">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@400;500;700;900&family=Assistant:wght@300;400;500;600;700&display=swap');
+
+.shk-root{
+  --stone:        #EFE6D3;
+  --stone-deep:   #E2D4B4;
+  --stone-line:   #CBB98D;
+  --ink:          #2C2318;
+  --ink-soft:     #5A4B37;
+  --wine:         #7C2B2E;
+  --wine-deep:    #5C1E20;
+  --gold:         #A6792C;
+  --gold-light:   #C9A24B;
+  --cypress:      #33453D;
+  --paper:        #FBF7EE;
+  --serif: 'Frank Ruhl Libre', 'David Libre', serif;
+  --sans: 'Assistant', 'Arial Hebrew', sans-serif;
+  --arch-r: 90px;
+  direction: rtl;
+  background: var(--stone);
+  color: var(--ink);
+  font-family: var(--sans);
+  line-height: 1.65;
+  display:block;
+  border-radius: 12px;
+  overflow:hidden;
+}
+.shk-root *{ box-sizing: border-box; }
+.shk-root h1,.shk-root h2,.shk-root h3,.shk-root h4{ font-family: var(--serif); color: var(--wine-deep); margin: 0 0 .5em 0; font-weight: 700; }
+.shk-root a{ color: inherit; text-decoration: none; }
+.shk-root .gate-row{ display:flex; justify-content:center; gap: 5px; margin: 0 0 1.4rem 0; }
+.shk-root .gate-row span{ display:block; width: 14px; height: 20px; border-radius: 7px 7px 0 0; background: linear-gradient(180deg, var(--gold-light), var(--gold)); opacity: .55; }
+.shk-root .gate-row span:nth-child(4),.shk-root .gate-row span:nth-child(9){ height: 28px; opacity: .9; background: linear-gradient(180deg, var(--wine), var(--wine-deep)); }
+.shk-root header.site{ background: var(--wine-deep); color: var(--paper); position: sticky; top:0; z-index: 5; }
+.shk-root .nav-wrap{ display:flex; align-items:center; justify-content:space-between; padding: .7rem 1rem; flex-wrap: wrap; gap: .5rem; }
+.shk-root .brand{ display:flex; align-items:center; gap:.5rem; font-family: var(--serif); font-size: 1rem; font-weight:700; color: var(--paper); }
+.shk-root .brand-mark{ width: 22px; height: 26px; border-radius: 11px 11px 0 0; background: linear-gradient(180deg, var(--gold-light), var(--gold)); flex-shrink:0; }
+.shk-root nav.main{ display:flex; gap: .5rem; font-size: .78rem; flex-wrap: wrap; }
+.shk-root nav.main button{ font-family: var(--sans); background:none; border:none; color: var(--paper); cursor:pointer; padding: .3rem .5rem; border-radius: 999px; opacity:.85; font-size: .78rem; }
+.shk-root nav.main button.active{ background: rgba(255,255,255,.15); opacity:1; font-weight:600; }
+.shk-root nav.main button.nav-cta{ background: var(--gold); color: var(--wine-deep); opacity:1; font-weight:600; }
+.shk-root main{ padding: 0 1rem; }
+.shk-root section{ padding: 2rem 0; }
+.shk-root .section-narrow{ max-width: 560px; margin: 0 auto; }
+.shk-root .eyebrow{ font-family: var(--serif); color: var(--gold); letter-spacing: .1em; font-size: .76rem; margin-bottom: .4rem; display:block; }
+.shk-root p.lead{ font-size: .92rem; color: var(--ink-soft); }
+.shk-root .divider{ border:0; height: 1px; background: linear-gradient(90deg, transparent, var(--stone-line), transparent); margin: 0; }
+.shk-root .hero{ padding: 2.2rem 0 1.6rem; text-align:center; }
+.shk-root .hero h1{ font-size: 1.5rem; line-height:1.3; }
+.shk-root .hero .lead{ max-width: 440px; margin: .7rem auto 1.4rem; }
+.shk-root .hero-actions{ display:flex; gap: .6rem; justify-content:center; flex-wrap:wrap; }
+.shk-root .btn{ display:inline-block; padding: .55rem 1.1rem; border-radius: 999px; font-weight: 600; font-size: .82rem; border: 2px solid transparent; cursor:pointer; font-family: var(--sans); }
+.shk-root .btn-primary{ background: var(--wine); color: var(--paper); }
+.shk-root .btn-outline{ border-color: var(--wine); color: var(--wine); background:transparent; }
+.shk-root .btn-gold{ background: var(--gold); color: var(--wine-deep); }
+.shk-root .card-grid{ display:grid; grid-template-columns: repeat(3, 1fr); gap: .8rem; }
+.shk-root .card{ background: var(--paper); padding: 1.3rem .8rem 1.1rem; border-radius: var(--arch-r) var(--arch-r) 8px 8px; border: 1px solid var(--stone-line); text-align:center; }
+.shk-root .card .num{ font-family: var(--serif); color: var(--gold); font-size: .85rem; margin-bottom: .25rem; display:block; }
+.shk-root .card h3{ font-size: .86rem; }
+.shk-root .card p{ color: var(--ink-soft); font-size: .74rem; }
+.shk-root blockquote.pull{ font-family: var(--serif); font-size: 1rem; color: var(--wine-deep); text-align:center; max-width: 480px; margin: 0 auto; line-height:1.5; padding: 0 .4rem; }
+.shk-root blockquote.pull cite{ display:block; font-family: var(--sans); font-size: .74rem; color: var(--gold); margin-top: .7rem; font-style:normal; }
+.shk-root footer.site{ background: var(--wine-deep); color: var(--stone); }
+.shk-root .footer-wrap{ padding: 1.6rem 1rem 1rem; display:grid; grid-template-columns: 1fr 1fr; gap: 1rem; font-size: .78rem; }
+.shk-root footer.site h4{ color: var(--gold-light); font-size:.85rem; }
+.shk-root footer.site a{ opacity:.85; display:block; margin-bottom:.25rem; }
+.shk-root .footer-bottom{ text-align:center; padding: .7rem; font-size:.68rem; opacity:.7; border-top: 1px solid rgba(255,255,255,.12); }
+
+.shk-root .halacha-item{ display:flex; gap: 1rem; padding: 1.1rem 0; border-bottom: 1px solid var(--stone-deep); align-items:flex-start; }
+.shk-root .halacha-item:last-child{ border-bottom:none; }
+.shk-root .halacha-mark{ flex-shrink:0; width: 34px; height: 40px; border-radius: 17px 17px 4px 4px; background: linear-gradient(180deg, var(--gold-light), var(--gold)); display:flex; align-items:center; justify-content:center; color: var(--paper); font-family: var(--serif); font-weight:700; font-size:.85rem; }
+.shk-root .halacha-item h3{ margin-bottom:.2rem; font-size: .9rem; }
+.shk-root .halacha-item p{ color: var(--ink-soft); margin:0; font-size: .78rem; }
+.shk-root .note-box{ background: var(--stone-deep); border-right: 4px solid var(--wine); border-radius: 8px; padding: 1rem 1.1rem; font-size: .78rem; color: var(--ink-soft); margin-top: 1.6rem; }
+.shk-root .note-box strong{ color: var(--wine-deep); }
+
+.shk-root table.schedule{ width:100%; border-collapse: collapse; background: var(--paper); border-radius: 8px; overflow:hidden; font-size: .74rem; }
+.shk-root table.schedule th{ background: var(--wine-deep); color: var(--paper); font-family: var(--serif); font-weight:500; padding: .5rem .5rem; text-align:right; }
+.shk-root table.schedule td{ padding: .55rem .5rem; border-bottom: 1px solid var(--stone-deep); }
+.shk-root table.schedule tr:last-child td{ border-bottom:none; }
+.shk-root .tag{ display:inline-block; padding: .15rem .5rem; border-radius: 999px; font-size: .68rem; font-weight:600; white-space:nowrap; }
+.shk-root .tag-open{ background: #E4EEE7; color: var(--cypress); }
+.shk-root .tag-full{ background: #F1E2E2; color: var(--wine-deep); }
+
+.shk-root .form-box{ background: var(--paper); padding: 1.4rem; border-radius: 16px; border: 1px solid var(--stone-line); }
+.shk-root label{ display:block; font-weight:600; margin: .8rem 0 .3rem; color: var(--ink); font-size: .82rem; }
+.shk-root label:first-child{ margin-top:0; }
+.shk-root input, .shk-root select, .shk-root textarea{ width:100%; padding: .55rem .7rem; border-radius: 8px; border: 1.5px solid var(--stone-line); background: var(--stone); font-family: var(--sans); font-size: .85rem; color: var(--ink); }
+.shk-root textarea{ resize: vertical; min-height: 70px; }
+.shk-root .form-note{ font-size: .72rem; color: var(--ink-soft); margin-top: .3rem; }
+
+.shk-root .donate-grid{ display:grid; grid-template-columns: repeat(4, 1fr); gap: .6rem; margin-bottom: 1.2rem; }
+.shk-root .donate-amt{ background: var(--paper); border: 2px solid var(--stone-line); border-radius: 10px; padding: .8rem .3rem; text-align:center; font-family: var(--serif); font-size: .95rem; font-weight:700; color: var(--wine-deep); cursor:pointer; }
+.shk-root .donate-amt.selected{ border-color: var(--gold); background: var(--stone); }
+.shk-root .donate-amt span{ display:block; font-family: var(--sans); font-weight:400; font-size: .62rem; color: var(--ink-soft); margin-top:.2rem; }
+
+@media (max-width: 480px){
+  .shk-root .card-grid{ grid-template-columns: 1fr; }
+  .shk-root .footer-wrap{ grid-template-columns: 1fr; }
+  .shk-root .donate-grid{ grid-template-columns: 1fr 1fr; }
+}
+</style>
+
+<h2 class="sr-only" style="position:absolute;width:1px;height:1px;overflow:hidden;">תצוגה מקדימה אינטראקטיבית של אתר שמירת הקודש עם ניווט בין כל הדפים</h2>
+
+<div class="shk-root">
+  <header class="site">
+    <div class="nav-wrap">
+      <a href="#" class="brand"><span class="brand-mark"></span>שמירת הקודש</a>
+      <nav class="main">
+        <button class="active" data-page="home" onclick="shkNav(this,'home')">דף הבית</button>
+        <button data-page="halachot" onclick="shkNav(this,'halachot')">הלכות עלייה</button>
+        <button data-page="luach" onclick="shkNav(this,'luach')">לוח זמנים</button>
+        <button data-page="contact" onclick="shkNav(this,'contact')">יצירת קשר</button>
+        <button class="nav-cta" data-page="trumot" onclick="shkNav(this,'trumot')">תרומה</button>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+
+    <div class="shk-page" data-id="home">
+      <section class="hero">
+        <span class="eyebrow">בס״ד</span>
+        <div class="gate-row"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
+        <h1>מלווים כל עולה בדרך הקודש<br>אל הר הבית</h1>
+        <p class="lead">שמירת הקודש היא קהילה המסייעת ליהודים המבקשים לעלות להר הבית לעשות זאת מתוך ידיעה, הכנה ראויה, וליווי צמוד.</p>
+        <div class="hero-actions">
+          <button class="btn btn-primary" onclick="shkNav(null,'halachot')">להלכות העלייה</button>
+          <button class="btn btn-outline" onclick="shkNav(null,'luach')">לוח העליות הקרוב</button>
+        </div>
+      </section>
+      <hr class="divider">
+      <section>
+        <div class="section-narrow" style="text-align:center; margin-bottom:1.4rem;">
+          <span class="eyebrow">מה אנחנו עושים</span>
+          <h2>ליווי מן ההכנה ועד השיבה</h2>
+        </div>
+        <div class="card-grid">
+          <div class="card"><span class="num">א</span><h3>הכנה הלכתית</h3><p>שיעור מוקדם על גבולות הטהרה והלבוש.</p></div>
+          <div class="card"><span class="num">ב</span><h3>טבילה במקווה</h3><p>תיאום טבילה כדין קודם העלייה.</p></div>
+          <div class="card"><span class="num">ג</span><h3>ליווי בהר</h3><p>מדריך בקיא מלווה כל קבוצה במסלול.</p></div>
+        </div>
+      </section>
+      <hr class="divider">
+      <section class="section-narrow">
+        <blockquote class="pull">"מוֹרָא מִקְדָּשׁ מִנַּיִן? תַּלְמוּד לוֹמַר: אֶת שַׁבְּתֹתַי תִּשְׁמֹרוּ וּמִקְדָּשִׁי תִּירָאוּ״<cite>ויקרא, פרק י״ט</cite></blockquote>
+      </section>
+    </div>
+
+    <div class="shk-page" data-id="halachot" style="display:none;">
+      <section class="hero" style="padding-bottom:.4rem;">
+        <span class="eyebrow">לימוד לפני מעשה</span>
+        <h1>הלכות העלייה להר הבית</h1>
+        <p class="lead">עקרונות היסוד המלווים כל עלייה מטעמנו. כל עולה מחויב ללמוד ולשאול רב מורה הוראה טרם עלייתו.</p>
+      </section>
+      <hr class="divider">
+      <section style="padding-top:0;">
+        <div class="halacha-item"><div class="halacha-mark">א</div><div><h3>טהרה קודם הכל</h3><p>טבילה במקווה כשר בסמוך לעלייה, והקפדה על הכנות הטהרה הנדרשות.</p></div></div>
+        <div class="halacha-item"><div class="halacha-mark">ב</div><div><h3>לבוש ונעליים</h3><p>נעליים שאינן של עור, ולבוש צנוע והולם לכל אורך השהות בהר.</p></div></div>
+        <div class="halacha-item"><div class="halacha-mark">ג</div><div><h3>המסלול המותר</h3><p>הליכה במסלול המוגדר מראש בלבד, תוך הימנעות מאזורים שנויים במחלוקת.</p></div></div>
+        <div class="halacha-item"><div class="halacha-mark">ד</div><div><h3>יראת המקום</h3><p>הימנעות מדיבור בטל והליכה בראש מורכן וברוב יראה.</p></div></div>
+        <div class="halacha-item"><div class="halacha-mark">ה</div><div><h3>ליווי מוסמך בלבד</h3><p>איננו ממליצים על עלייה עצמאית ללא מדריך מוסמך מטעמנו.</p></div></div>
+        <div class="note-box"><strong>הערה חשובה:</strong> קיימות מחלוקות הלכתיות בין הפוסקים. איננו ממליצים לעלות ללא הדרכה אישית מרב מוסמך.</div>
+      </section>
+    </div>
+
+    <div class="shk-page" data-id="luach" style="display:none;">
+      <section class="hero" style="padding-bottom:.4rem;">
+        <span class="eyebrow">מתי עולים</span>
+        <h1>לוח העליות המאורגנות</h1>
+        <p class="lead">כל עלייה נפתחת בשיעור הכנה. מספר המקומות מוגבל.</p>
+      </section>
+      <hr class="divider">
+      <section style="padding-top:0;">
+        <table class="schedule">
+          <thead><tr><th>תאריך</th><th>שעת עלייה</th><th>מדריך</th><th>סטטוס</th></tr></thead>
+          <tbody>
+            <tr><td>יום ראשון, ה׳ אב</td><td>06:15</td><td>הרב אשכנזי</td><td><span class="tag tag-open">פנוי</span></td></tr>
+            <tr><td>יום שני, י״ב אב</td><td>07:00</td><td>הרב כהן</td><td><span class="tag tag-open">פנוי</span></td></tr>
+            <tr><td>יום רביעי, כ״א אב</td><td>06:30</td><td>הרב אשכנזי</td><td><span class="tag tag-full">מלא</span></td></tr>
+            <tr><td>יום ראשון, כ״ה אב</td><td>06:45</td><td>הרב לוין</td><td><span class="tag tag-open">פנוי</span></td></tr>
+          </tbody>
+        </table>
+        <div class="note-box"><strong>לתשומת לבכם:</strong> השתתפות בשיעור ההכנה היא תנאי הכרחי להצטרפות לעלייה.</div>
+      </section>
+    </div>
+
+    <div class="shk-page" data-id="contact" style="display:none;">
+      <section class="hero" style="padding-bottom:.4rem;">
+        <span class="eyebrow">בואו נכיר</span>
+        <h1>יצירת קשר והרשמה</h1>
+        <p class="lead">מלאו פרטים ונחזור אליכם לתיאום שיעור ההכנה והעלייה.</p>
+      </section>
+      <hr class="divider">
+      <section style="padding-top:0;">
+        <div class="form-box">
+          <label>שם מלא</label><input type="text" placeholder="ישראל ישראלי">
+          <label>טלפון</label><input type="tel" placeholder="050-0000000">
+          <label>מועד עלייה מבוקש</label>
+          <select><option>יום ראשון, ה׳ אב</option><option>יום שני, י״ב אב</option></select>
+          <div class="form-note">בהרשמתכם אתם מאשרים השתתפות בשיעור ההכנה.</div>
+          <button class="btn btn-primary" style="margin-top:1rem; width:100%; border:none;">שליחת הרשמה</button>
+        </div>
+      </section>
+    </div>
+
+    <div class="shk-page" data-id="trumot" style="display:none;">
+      <section class="hero" style="padding-bottom:.4rem;">
+        <span class="eyebrow">שותפים בקדושה</span>
+        <h1>תמכו בעלייה הבאה</h1>
+        <p class="lead">תרומתכם מממנת שיעורי הכנה, ליווי מדריכים, והנגשת העלייה למשפחות.</p>
+      </section>
+      <hr class="divider">
+      <section style="padding-top:0;">
+        <div class="donate-grid">
+          <div class="donate-amt" data-amt="50">₪50<span>שיעור הכנה</span></div>
+          <div class="donate-amt selected" data-amt="180">₪180<span>מימון קבוצה</span></div>
+          <div class="donate-amt" data-amt="360">₪360<span>ליווי ליום</span></div>
+          <div class="donate-amt" data-amt="1000">₪1000<span>מעגל תומכים</span></div>
+        </div>
+        <div class="form-box">
+          <label>שם התורם</label><input type="text" placeholder="שם מלא">
+          <label>טלפון ליצירת קשר</label><input type="tel" placeholder="050-0000000">
+          <button class="btn btn-gold" style="margin-top:1rem; width:100%; border:none;">מעבר לתרומה מאובטחת</button>
+        </div>
+      </section>
+    </div>
+
+  </main>
+
+  <footer class="site">
+    <div class="footer-wrap">
+      <div><h4>שמירת הקודש</h4><p style="opacity:.85;">קהילה המלווה יהודים בעלייה להר הבית מתוך ידיעה, הכנה וכבוד למקום ולהלכה.</p></div>
+      <div><h4>ניווט</h4>
+        <a href="#" onclick="shkNav(null,'halachot');return false;">הלכות עלייה</a>
+        <a href="#" onclick="shkNav(null,'luach');return false;">לוח זמנים</a>
+        <a href="#" onclick="shkNav(null,'contact');return false;">יצירת קשר</a>
+        <a href="#" onclick="shkNav(null,'trumot');return false;">תרומות</a>
+      </div>
+    </div>
+    <div class="footer-bottom">© שמירת הקודש — כל הזכויות שמורות</div>
+  </footer>
+</div>
+
+<script>
+function shkNav(btn, pageId){
+  document.querySelectorAll('.shk-page').forEach(function(p){
+    p.style.display = (p.getAttribute('data-id') === pageId) ? '' : 'none';
+  });
+  document.querySelectorAll('nav.main button').forEach(function(b){
+    b.classList.toggle('active', b.getAttribute('data-page') === pageId && !b.classList.contains('nav-cta'));
+  });
+  var root = document.querySelector('.shk-root');
+  if(root) root.scrollIntoView({block:'nearest'});
+}
+document.querySelectorAll('.donate-amt').forEach(function(el){
+  el.addEventListener('click', function(){
+    document.querySelectorAll('.donate-amt').forEach(function(e){ e.classList.remove('selected'); });
+    el.classList.add('selected');
+  });
+});
+</script>
+</body>
+</html>
