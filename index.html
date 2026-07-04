@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="he" dir="rtl">
 <head>
@@ -256,7 +257,7 @@
 </div>
 
 <script>
-function shkNav(btn, pageId){
+function shkShowPage(pageId){
   document.querySelectorAll('.shk-page').forEach(function(p){
     p.style.display = (p.getAttribute('data-id') === pageId) ? '' : 'none';
   });
@@ -266,6 +267,27 @@ function shkNav(btn, pageId){
   var root = document.querySelector('.shk-root');
   if(root) root.scrollIntoView({block:'nearest'});
 }
+
+function shkNav(btn, pageId){
+  shkShowPage(pageId);
+  var url = '#' + pageId;
+  if(window.location.hash !== url){
+    history.pushState({shkPage: pageId}, '', url);
+  }
+}
+
+window.addEventListener('popstate', function(e){
+  var pageId = (e.state && e.state.shkPage) || (window.location.hash ? window.location.hash.slice(1) : 'home');
+  shkShowPage(pageId);
+});
+
+(function shkInitFromUrl(){
+  var initialPage = window.location.hash ? window.location.hash.slice(1) : 'home';
+  if(!document.querySelector('.shk-page[data-id="' + initialPage + '"]')) initialPage = 'home';
+  history.replaceState({shkPage: initialPage}, '', initialPage === 'home' ? window.location.pathname : ('#' + initialPage));
+  shkShowPage(initialPage);
+})();
+
 document.querySelectorAll('.donate-amt').forEach(function(el){
   el.addEventListener('click', function(){
     document.querySelectorAll('.donate-amt').forEach(function(e){ e.classList.remove('selected'); });
