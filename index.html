@@ -203,14 +203,15 @@
       </section>
       <hr class="divider">
       <section style="padding-top:0;">
-        <div class="form-box">
-          <label>שם מלא</label><input type="text" placeholder="ישראל ישראלי">
-          <label>טלפון</label><input type="tel" placeholder="050-0000000">
+        <form class="form-box" id="shk-contact-form" onsubmit="return shkSubmitForm(event,'shk-contact-form','shk-contact-status','הרשמה חדשה - שמירת הקודש');">
+          <label>שם מלא</label><input type="text" name="שם מלא" placeholder="ישראל ישראלי" required>
+          <label>טלפון</label><input type="tel" name="טלפון" placeholder="050-0000000" required>
           <label>מועד עלייה מבוקש</label>
-          <select><option>יום ראשון, ה׳ אב</option><option>יום שני, י״ב אב</option></select>
+          <select name="מועד עלייה מבוקש"><option>יום ראשון, ה׳ אב</option><option>יום שני, י״ב אב</option></select>
           <div class="form-note">בהרשמתכם אתם מאשרים השתתפות בשיעור ההכנה.</div>
-          <button class="btn btn-primary" style="margin-top:1rem; width:100%; border:none;">שליחת הרשמה</button>
-        </div>
+          <button type="submit" class="btn btn-primary" style="margin-top:1rem; width:100%; border:none;">שליחת הרשמה</button>
+          <div id="shk-contact-status" style="margin-top:.7rem; font-size:.85rem;"></div>
+        </form>
       </section>
     </div>
 
@@ -228,11 +229,13 @@
           <div class="donate-amt" data-amt="360">₪360<span>ליווי ליום</span></div>
           <div class="donate-amt" data-amt="1000">₪1000<span>מעגל תומכים</span></div>
         </div>
-        <div class="form-box">
-          <label>שם התורם</label><input type="text" placeholder="שם מלא">
-          <label>טלפון ליצירת קשר</label><input type="tel" placeholder="050-0000000">
-          <button class="btn btn-gold" style="margin-top:1rem; width:100%; border:none;">מעבר לתרומה מאובטחת</button>
-        </div>
+        <form class="form-box" id="shk-donate-form" onsubmit="return shkSubmitForm(event,'shk-donate-form','shk-donate-status','תרומה חדשה - שמירת הקודש');">
+          <label>שם התורם</label><input type="text" name="שם התורם" placeholder="שם מלא" required>
+          <label>טלפון ליצירת קשר</label><input type="tel" name="טלפון" placeholder="050-0000000" required>
+          <input type="hidden" name="סכום נבחר" id="shk-donate-amt-field" value="180">
+          <button type="submit" class="btn btn-gold" style="margin-top:1rem; width:100%; border:none;">שליחת פרטי תרומה</button>
+          <div id="shk-donate-status" style="margin-top:.7rem; font-size:.85rem;"></div>
+        </form>
       </section>
     </div>
 
@@ -267,8 +270,47 @@ document.querySelectorAll('.donate-amt').forEach(function(el){
   el.addEventListener('click', function(){
     document.querySelectorAll('.donate-amt').forEach(function(e){ e.classList.remove('selected'); });
     el.classList.add('selected');
+    var amtField = document.getElementById('shk-donate-amt-field');
+    if(amtField) amtField.value = '₪' + el.getAttribute('data-amt');
   });
 });
+
+var SHK_EMAIL = 'sasona9584@gmail.com';
+
+function shkSubmitForm(evt, formId, statusId, subject){
+  evt.preventDefault();
+  var form = document.getElementById(formId);
+  var statusEl = document.getElementById(statusId);
+  var submitBtn = form.querySelector('button[type="submit"]');
+  var data = new FormData(form);
+  data.append('_subject', subject);
+  data.append('_captcha', 'false');
+  data.append('_template', 'table');
+
+  statusEl.style.color = 'var(--ink-soft)';
+  statusEl.textContent = 'שולח...';
+  submitBtn.disabled = true;
+
+  fetch('https://formsubmit.co/ajax/' + SHK_EMAIL, {
+    method: 'POST',
+    headers: { 'Accept': 'application/json' },
+    body: data
+  })
+  .then(function(res){ return res.json(); })
+  .then(function(){
+    statusEl.style.color = 'green';
+    statusEl.textContent = 'הפרטים נשלחו בהצלחה! ניצור איתכם קשר בקרוב.';
+    form.reset();
+    submitBtn.disabled = false;
+  })
+  .catch(function(){
+    statusEl.style.color = 'var(--wine)';
+    statusEl.textContent = 'אירעה שגיאה בשליחה. נסו שוב או צרו קשר טלפונית.';
+    submitBtn.disabled = false;
+  });
+
+  return false;
+}
 </script>
 </body>
 </html>
