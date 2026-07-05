@@ -1,4 +1,0 @@
-User-agent: *
-Allow: /
-
-Sitemap: https://sasona9584-tech.github.io/shmirat-hakodesh-site/sitemap.xml
