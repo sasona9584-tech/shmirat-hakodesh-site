@@ -8,18 +8,18 @@
    =================================================================== */
 
 :root{
-  --ink:        #1C1B17;   /* כהה — משמרת לילה */
-  --ink-2:      #26241E;
-  --paper:      #FAF8F3;   /* בהיר — משמרת יום */
-  --paper-2:    #F1ECE0;
-  --stone-line: #DCD3BE;
-  --stone-line-dark: #3C392F;
-  --ink-soft:   #6B6558;
-  --sand:       #C9BFA8;   /* טקסט משני על רקע כהה */
-  --gold:       #B08942;
-  --gold-light: #D8BD82;
-  --wine:       #7C2B2E;
-  --wine-deep:  #5C1E20;
+  --ink:        #1B1830;   /* שמי לילה — לפני עלות השחר */
+  --ink-2:      #241F3E;
+  --paper:      #F7F2E4;   /* יסוד טהור — אבן לבנה */
+  --paper-2:    #EFE6CD;
+  --stone-line: #E3D6AE;
+  --stone-line-dark: #342C55;
+  --ink-soft:   #6B5C3F;
+  --sand:       #C9BEDD;   /* טקסט משני על רקע כהה */
+  --gold:       #C9A24B;
+  --gold-light: #E8C077;
+  --wine:       #8C6A22;
+  --wine-deep:  #6B4E10;
   --focus:      #3D7A8A;
 
   --serif: 'Frank Ruhl Libre', 'David Libre', serif;
