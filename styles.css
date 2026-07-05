@@ -136,6 +136,25 @@ section{ padding: 3.2rem 0; }
 .card .num{ font-family: var(--serif); color: var(--gold); font-size:1.3rem; font-weight:700; display:block; margin-bottom:.4rem; }
 .card h3{ font-size:1.05rem; margin-bottom:.3rem; }
 .card p{ font-size:.9rem; color: var(--ink-soft); margin:0; }
+.card-link{ display:block; text-decoration:none; cursor:pointer; }
+.card-link:hover{ border-color: var(--gold); }
+
+/* ---------- כפתור לוי צף ---------- */
+.levi-fab{
+  position: fixed; left: 1.1rem; bottom: 1.1rem; z-index: 90;
+  display:flex; align-items:center; gap:.5rem;
+  background: var(--wine); color: var(--paper); text-decoration:none;
+  padding:.7rem 1rem; border-radius: 999px; box-shadow: 0 8px 20px rgba(28,27,23,.22);
+  font-family: var(--sans); font-weight:700; font-size:.86rem;
+  transition: transform .15s ease, background .15s ease;
+}
+.levi-fab:hover{ background: var(--wine-deep); transform: translateY(-2px); }
+.levi-fab-icon{ display:flex; color: var(--gold-light); flex-shrink:0; }
+.levi-fab-text{ white-space:nowrap; }
+@media (max-width: 480px){
+  .levi-fab{ padding:.65rem; }
+  .levi-fab-text{ display:none; }
+}
 
 /* ---------- הלכות / רשימת פריטים ---------- */
 .item-row{ display:flex; gap:1rem; padding: 1.2rem 0; border-bottom:1px solid var(--stone-line); }
